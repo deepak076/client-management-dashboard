@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>HARDIK TRADERS - CLIENT MANAGEMENT DASHBOARD</h1>
+    </header>
+
+    <!-- Search bar section -->
+    <section id="search-bar">
+        <input type="text" placeholder="Search by Client Name or ID" id="search-input">
+        <button id="search-button">Search</button>
+    </section>
+
+    <section id="job-sheet-section">
+        <button id="new-job-sheet-button">New Job Sheet</button>
+    </section>
+
+    <section id="job-sheet-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Client ID</th>
+                    <th>Client Name</th>
+                    <th>Contact Info</th>
+                    <th>Received Date</th>
+                    <th>Inventory Received</th>
+                    <th>Reported Issues</th>
+                    <th>Assigned Technician</th>
+                    <th>Estimated Amount</th>
+                    <th>Status</th>
+                    <th>Actions</th> <!-- Added Actions column -->
+
+                </tr>
+            </thead>
+            <tbody id="job-data">
+                <!-- Job sheet data will be injected here -->
+            </tbody>
+        </table>
+    </section>
+
+
+    <!-- Hidden form for creating a new Job Sheet -->
+    <div id="overlay">
+
+        <div id="job-sheet-form" class="hidden">
+            <h2>Create New Job Sheet</h2>
+            <form id="create-job-sheet-form">
+                <label for="client_id">Client ID:</label>
+                <input type="text" id="client_id" name="client_id" required><br>
+
+                <label for="client_name">Client Name:</label>
+                <input type="text" id="client_name" name="client_name" required><br>
+
+                <label for="contact_info">Contact Info:</label>
+                <input type="text" id="contact_info" name="contact_info" required><br>
+
+                <label for="received_date">Received Date:</label>
+                <input type="date" id="received_date" name="received_date" required><br>
+
+                <label for="inventory_received">Inventory Received:</label>
+                <input type="text" id="inventory_received" name="inventory_received" required><br>
+
+                <label for="reported_issues">Reported Issues:</label>
+                <input type="text" id="reported_issues" name="reported_issues" required><br>
+
+                <label for="assigned_technician">Assigned Technician:</label>
+                <input type="text" id="assigned_technician" name="assigned_technician" required><br>
+
+                <label for="estimated_amount">Estimated Amount:</label>
+                <input type="number" id="estimated_amount" name="estimated_amount" required><br>
+
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select><br>
+
+                <button type="submit">Submit</button>
+                <button type="button" id="close-form">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Job Sheet Form -->
+    <div id="view-job-sheet-form" style="display: none;">
+        <div id="overlay" style="display: none;"></div>
+        <div class="form-container">
+            <h2>View Job Sheet</h2>
+            <form id="view-job-sheet-details">
+                <label for="view-client-id">Client ID:</label>
+                <input type="text" id="view-client-id" disabled>
+
+                <label for="view-client-name">Client Name:</label>
+                <input type="text" id="view-client-name" disabled>
+
+                <label for="view-contact-info">Contact Info:</label>
+                <input type="text" id="view-contact-info" disabled>
+
+                <label for="view-received-date">Received Date:</label>
+                <input type="text" id="view-received-date" disabled>
+
+                <label for="view-inventory-received">Inventory Received:</label>
+                <textarea id="view-inventory-received" disabled></textarea>
+
+                <label for="view-reported-issues">Reported Issues:</label>
+                <textarea id="view-reported-issues" disabled></textarea>
+
+                <label for="view-client-notes">Client Notes:</label>
+                <textarea id="view-client-notes" disabled></textarea>
+
+                <label for="view-assigned-technician">Assigned Technician:</label>
+                <input type="text" id="view-assigned-technician" disabled>
+
+                <label for="view-estimated-amount">Estimated Amount:</label>
+                <input type="text" id="view-estimated-amount" disabled>
+
+                <label for="view-status">Status:</label>
+                <input type="text" id="view-status" disabled>
+
+                <button type="button" id="close-view-form">Close</button>
+            </form>
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <p>&copy; 2024 HARDIK TRADERS. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
