@@ -13,4 +13,10 @@ router.post('/', jobController.createJobSheet);
 // Route to get a job sheet by ID
 router.get('/:id', jobController.getJobSheetById);
 
+
+router.put('/:id', jobController.updateJobSheet);
+
+router.delete('/:id', jobController.deleteJobSheet);
+
+
 module.exports = router;

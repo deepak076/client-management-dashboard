@@ -45,7 +45,6 @@ const JobSheet = sequelize.define('JobSheet', {
         allowNull: false
     }
 }, {
-    // Other model options
     timestamps: true, // Adds `createdAt` and `updatedAt` columns
     tableName: 'job_sheets' // Explicitly specify the table name
 });

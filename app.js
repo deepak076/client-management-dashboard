@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const sequelize = require('./config/database');
-const jobRoutes = require('./routes/jobRoutes'); // Import the job routes
+const jobRoutes = require('./routes/jobRoutes');
 
 const app = express();
 
